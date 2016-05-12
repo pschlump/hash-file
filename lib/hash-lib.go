@@ -70,6 +70,14 @@ func HashFile(cfg *HashLibCfg, fn string) (h string, err error) {
 	return
 }
 
+// NewETag, err := hashlib.HashData(newdata)
+func HashData(data []byte) (h string, err error) {
+	h = HashStrings.Sha256(string(data))
+	return
+}
+
+// NewETag, err := hashlib.HashFile(nil, name) // xyzzy - shoud have a HashFileWithInfo ( nil, name, size, modtime )
+
 /*
 
 // if found2, fileInfo2 := lib.ExistsGetFileInfo(index); found2 {
